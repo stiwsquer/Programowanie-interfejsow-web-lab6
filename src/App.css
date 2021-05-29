@@ -1,38 +1,258 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  --header1: calc(2rem + 1vw);
+  --header2: calc(3.5rem + 1vw);
+  --header3: calc(3rem + 1vw);
+  --header4: calc(2.4rem + 1vw);
+  --input-text: calc(1rem + 1vw);
+  --text: calc(1.5rem + 1vw);
+  --big: calc(2.4rem + 1vw);
+  --special-color: #906272;
+  --background-color: #414141;
+  --gray-text: #525252;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+button,
+label,
+input,
+p {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 4.8rem;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+h4,
+h5 {
+  font-size: 2.8rem;
+}
+
+@font-face {
+  font-family: "Ruhl";
+  src: url("./fonts/FrankRuhlLibre-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Ruhl Medium";
+  src: url("./fonts/FrankRuhlLibre-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Vibes";
+  src: url("./fonts/GreatVibes-Regular.ttf");
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: var(--text);
+}
+
+a:hover {
+  color: #8a8787;
+}
+
+nav h1 {
+  font-family: "Vibes", sans-serif;
+  font-size: var(--header1);
+}
+
+.main-head {
+  background: white;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  min-height: 10vh;
+  padding: 2rem 0rem;
+}
+
+#logo {
+  flex: 1 1 20rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  flex: 1 1 20rem;
+}
+
+.form-login {
+  background: linear-gradient(rgba(1, 1, 1, 0), transparent),
+    url("./img/pexels-ponyo-sakana-4193872.jpg");
+}
+
+.form-register {
+  background: linear-gradient(rgba(1, 1, 1, 0), transparent),
+    url("./img/pexels-horizon-content-3731422.jpg");
+}
+
+.form {
+  min-height: 90vh;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  background: rgba(19, 28, 39, 0.5);
+  width: 60%;
+  color: white;
+  border-radius: 20px;
+}
+
+.form-head {
+  text-align: center;
+  padding: 4rem;
+}
+
+.display-name-form,
+.email-form,
+.password-form {
+  padding: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-wrapper label {
+  margin: 0rem 3rem;
+  font-size: var(--input-text);
+  padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-wrapper input {
+  padding: 1rem 3rem;
+  font-size: var(--input-text);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.form-login button {
+  background: #4c6e97;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form-register button {
+  background: white;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  padding: 2rem 6rem;
+
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+}
+
+.form-login button:hover {
+  background: #a81e1e;
+}
+
+.form-register button:hover {
+  color: #a81e1e;
+}
+
+.form-wrapper button {
+  width: 100%;
+  padding: 2rem;
+  margin-top: 8rem;
+  border-radius: 0px 0px 20px 20px;
+}
+
+/* .nav-login-disabled {
+  visibility: hidden;
+} */
+
+.image1 {
+  background: url("./img/1.jpg");
+  grid-area: img1;
+}
+
+.image2 {
+  background: url("./img/2.jpg");
+  grid-area: img2;
+}
+
+.image3 {
+  background: url("./img/3.jpg");
+  grid-area: img3;
+}
+
+.image4 {
+  background: url("./img/4.jpg");
+  grid-area: img4;
+}
+
+.image5 {
+  background: url("./img/5.jpg");
+  grid-area: img5;
+}
+
+.image6 {
+  background: url("./img/6.jpg");
+  grid-area: img6;
+}
+
+.image {
+  padding: 20rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image8 {
+  padding-top: 64rem;
+  background: url("./img/8.jpg");
+  grid-area: img8;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image1:hover,
+.image2:hover,
+.image3:hover,
+.image4:hover,
+.image5:hover,
+.image6:hover,
+.image8:hover {
+  opacity: 0.7;
+}
+
+.images {
+  display: grid;
+  min-height: 90vh;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+
+  grid-template-areas:
+    "img1 img2 img3 img8"
+    "img4 img5 img6 img8";
+
+  gap: 0rem 7rem;
+
+  /* justify-items: center;
+  align-items: center; */
 }
