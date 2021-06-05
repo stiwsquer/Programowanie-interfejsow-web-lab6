@@ -1,4 +1,5 @@
 import { auth } from "../config/Fire";
+import { updateUserData } from "../config/Fire";
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
 
@@ -8,10 +9,19 @@ const Login = () => {
   const [redirect, setRedirect] = useState(false);
 
   const login = () => {
+    auth.signOut().then(() => {
+      console.log("Wylogowano");
+    });
+
     auth
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         console.log("Zalogowano");
+        console.log(
+          updateUserData("piwstudent@gmail.com", {
+            adress: "97-420, Szczerców, ul. Piotrkowska 15",
+          })
+        );
         setRedirect(true);
       })
       .catch((error) => {
